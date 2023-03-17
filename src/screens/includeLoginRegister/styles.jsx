@@ -2,13 +2,12 @@ import {StyleSheet} from 'react-native'
 
 export default StyleSheet.create({
     container: {
-      marginTop: 85,
+      marginTop: 60,
       alignItems:'center',
       justifyContent:'center',
-      backgroundColor: ''
       },
       body:{
-        marginTop: 50,
+        marginTop: 40,
         backgroundColor: '#376AED',
         width: '100%',
         height: '90%',

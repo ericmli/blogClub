@@ -10,7 +10,7 @@ export default function Tabs() {
     <NavigationContainer>
       <Tab.Navigator 
        screenOptions={{
-        tabBarLabelStyle: { fontSize: 18 , color: '#FFF'},
+        tabBarLabelStyle: { fontSize: 18 , color: '#FFF', padding: 10, fontWeight: 500},
         tabBarItemStyle: { shadowColor:'none'},
         tabBarStyle: { backgroundColor: 'transparent' },
       }}

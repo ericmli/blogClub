@@ -6,9 +6,7 @@ export default StyleSheet.create({
       container:{
         backgroundColor: '#376AED',
         width: '100%',
-        bottom: 80,
         height: '100%',
-        marginTop: 80
         
       },
       body:{
@@ -23,7 +21,27 @@ export default StyleSheet.create({
         fontSize: 24,
         fontWeight:'bold',
         marginBottom: 10
-      }
+      },
+      containerReset:{
+        flexDirection: 'row',
+        gap: 8,
+        marginRight: 'auto',
+        marginLeft: 'auto',
+      },
+      textReset:{
+        color: '#376AED',
 
+      },
+      containerLogin:{
+        marginTop: 40,
+        width: '100%',
+        margin: 'auto',
+        alignItems: 'center'
+      },
+      loginSocial:{
+        marginTop: 20,
+        flexDirection: 'row',
+        gap: 40
+      }
 
 })

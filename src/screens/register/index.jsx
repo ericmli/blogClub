@@ -1,15 +1,41 @@
 import React from "react";
-import {  Text, View } from "react-native";
-import SvgComponent from "../../imgs/svg/logo";
+import { Text, View, ScrollView } from "react-native";
 import styles from './styles'
-import { createSwitchNavigator } from 'react-navigation';
+import { useNavigation } from '@react-navigation/native'
+import Input from "../../components/input";
+import InputPassword from "../../components/inputPassword";
+import Button from "../../components/Button";
+
+
 
 export default function Register (){
+    const navigation = useNavigation()
     return(
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={styles.body}>
-                <Text>Tela2</Text>
+                <Text style={styles.title}>Register</Text>
+
+                <Input
+                nameInput={'Username'}
+                />
+
+                <Input
+                nameInput={'E-mail'}
+                />
+
+                <InputPassword
+                nameInput={'Password'}
+                />
+
+                <InputPassword
+                nameInput={'Confirm Password'}
+                />
+
+                <Button
+                name={'REGISTER'}
+                />
+
             </View>
-        </View>
+        </ScrollView>
     )
 }
