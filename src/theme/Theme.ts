@@ -1,6 +1,4 @@
-import { extendTheme } from "native-base";
-
-export const theme = extendTheme({
+export const Theme = {
  
     colors: {
       blue: {
@@ -9,7 +7,14 @@ export const theme = extendTheme({
         30: '#7B8BB2',
         40: '#376AED'
       },
+      white:{
+        10: '#FFF',
+      },
+      black:{
+        10 : '#000',
+        20 : '#252525', 
+      }
     },
 
     
-});
+};

@@ -1,10 +1,10 @@
 import {StyleSheet} from 'react-native'
-import { theme } from '../../theme'
+import { Theme } from '../../theme/Theme'
 
 export default StyleSheet.create({
 
       container:{
-        backgroundColor: '#376AED',
+        backgroundColor: Theme.colors.blue[40],
         width: '100%',
         height: 60,
         marginTop: 40,
@@ -16,7 +16,7 @@ export default StyleSheet.create({
         textAlign: 'center',
         marginTop: 'auto',
         marginBottom: 'auto',
-        color: '#FFF',
+        color: Theme.colors.white[10],
         fontSize: 20,
       }
 

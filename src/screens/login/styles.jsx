@@ -1,10 +1,10 @@
 import {StyleSheet} from 'react-native'
-import { theme } from '../../theme'
+import { Theme, theme } from '../../theme/Theme'
 
 export default StyleSheet.create({
 
       container:{
-        backgroundColor: '#376AED',
+        backgroundColor: Theme.colors.blue[40],
         width: '100%',
         height: '100%',
         
@@ -12,12 +12,13 @@ export default StyleSheet.create({
       body:{
         height:'100%',
         width: '100%',
-        backgroundColor:'#FFF',
+        backgroundColor: Theme.colors.white[10],
         borderRadius: 40,
-        padding: 40
+        padding: 40,
+        paddingTop: 20
       },
       title:{
-        color:'#252525',
+        color: Theme.colors.black[20],
         fontSize: 24,
         fontWeight:'bold',
         marginBottom: 10
@@ -29,19 +30,9 @@ export default StyleSheet.create({
         marginLeft: 'auto',
       },
       textReset:{
-        color: '#376AED',
+        color: Theme.colors.blue[40],
 
       },
-      containerLogin:{
-        marginTop: 40,
-        width: '100%',
-        margin: 'auto',
-        alignItems: 'center'
-      },
-      loginSocial:{
-        marginTop: 20,
-        flexDirection: 'row',
-        gap: 40
-      }
+
 
 })

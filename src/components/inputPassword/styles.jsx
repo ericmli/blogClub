@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native'
+import { Theme } from '../../theme/Theme'
 
 export default StyleSheet.create({
     input:{
@@ -13,7 +14,7 @@ export default StyleSheet.create({
     text:{
         fontSize: 16,
         marginTop: 20,
-        color: '#2D4379',
+        color: Theme.colors.blue[20],
         fontWeight: 400
     },
     containerPassword : {
@@ -24,6 +25,10 @@ export default StyleSheet.create({
       padding: 10,
       left: '85%',
       fontSize: 16,
-      color: '#376AED',
-    }
+      color: Theme.colors.blue[40],
+    },
+    error:{
+      color: 'red',
+      fontSize: 12,
+  }
 })

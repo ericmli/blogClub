@@ -1,8 +1,9 @@
 import {StyleSheet} from 'react-native'
+import { Theme } from '../../theme/Theme'
 
 export default StyleSheet.create({
     input:{
-        width: '101%',
+        width: '100%',
         height: 50,
         borderBottomWidth: 0.5,
         marginTop: 0,
@@ -13,6 +14,10 @@ export default StyleSheet.create({
     text:{
         fontSize: 16,
         marginTop: 20,
-        color: '#2D4379'
+        color: Theme.colors.blue[20]
+    },
+    error:{
+        color: 'red',
+        fontSize: 12,
     }
 })
