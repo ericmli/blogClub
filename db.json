@@ -3,104 +3,17 @@
     {
       "id": 1,
       "name": "Eric Marciano",
-      "email": "ericmli@gmail.com",
+      "email": "ericmli1334@gmail.com",
       "password": "123456"
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 2
-    },
-    {
-      "name": "a",
-      "email": "b",
-      "password": "c",
-      "id": 3
     },
     {
       "name": "lasthitaki",
       "email": "lasthitaki@gmail.com",
       "password": "123456789",
-      "id": 4
+      "id": 2
     },
     {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 5
-    },
-    {
-      "name": "sadsad",
-      "email": "ss",
-      "password": "dsadsadas",
-      "id": 6
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 7
-    },
-    {
-      "name": "",
-      "email": "eric@gmail.com",
-      "password": "aaaa",
-      "id": 8
-    },
-    {
-      "name": "",
-      "email": "eric@gmail.com",
-      "password": "sadasdas",
-      "id": 9
-    },
-    {
-      "name": "aa",
-      "email": "eric@gmail.com",
-      "password": "aaa",
-      "id": 10
-    },
-    {
-      "name": "Eric Lima",
-      "email": "ericlima@gmail.com",
-      "password": "123",
-      "id": 11
-    },
-    {
-      "name": "Eric Lima",
-      "email": "eric@gmail.com",
-      "password": "marciano1334",
-      "id": 12
-    },
-    {
-      "name": "aaaaaaaa",
-      "email": "aaa@gmail.com",
-      "password": "123t",
-      "id": 13
-    },
-    {
-      "name": "adsada",
-      "email": "asd@gmail.com",
-      "password": "1112rsad",
-      "id": 14
-    },
-    {
-      "name": "adsada",
-      "email": "asd@gmail.com",
-      "password": "1112rsad",
-      "id": 15
-    },
-    {
-      "name": "adsada",
-      "email": "asd@gmail.com",
-      "password": "1112rsad",
-      "id": 16
-    },
-    {
-      "name": "adsada",
-      "email": "asd@gmail.com",
-      "password": "1112rsad",
-      "id": 17
+      "id": 3
     }
   ]
 }

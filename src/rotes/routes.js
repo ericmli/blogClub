@@ -15,6 +15,7 @@ const screenOptionStyle = {
   headerBackTitle: "Back",
 };
 
+
 export function MyStack() {
   return (
     <Navigator
@@ -39,6 +40,7 @@ export function MyStack() {
       <Screen 
         name='Home'
         component={Home}
+        options={{headerShown: false}}
       />
 
     </Navigator>

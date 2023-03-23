@@ -44,7 +44,7 @@ export default function Register() {
             name: Yup.string().required(setAlertName('Name invalid')),
             email: Yup.string().email(setAlertEmail('E-mail invalid')).required(setAlertEmail('E-mail is required')),
             password: Yup.string().required(setAlertPassword('Password is required')),
-        });
+        })
 
         const register = {
             name: name,
