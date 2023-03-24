@@ -1,12 +1,14 @@
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from '../screens/home';
 import IncludeAll from '../screens/includeLoginRegister';
 import { Onboarding } from '../screens/onboarding';
 import { Reset } from '../screens/resetPassword';
 import { Theme } from '../theme/Theme';
+import { Bottom } from './Bottom';
 
-const {Screen , Navigator} = createStackNavigator();
-
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator()
 const screenOptionStyle = {
   headerStyle: {
     backgroundColor: Theme.colors.blue[40],
@@ -15,34 +17,33 @@ const screenOptionStyle = {
   headerBackTitle: "Back",
 };
 
-
 export function MyStack() {
   return (
-    <Navigator
+    <Stack.Navigator
     screenOptions={screenOptionStyle}
     >
-      <Screen 
+      <Stack.Screen 
         name='Login'
         component={IncludeAll}
         options={{headerShown: false}}
       />
       
-      <Screen 
+      <Stack.Screen 
         name='Onboarding'
         component={Onboarding}
       />
       
-      <Screen 
+      <Stack.Screen 
         name='Reset Password'
         component={Reset}
       />
 
-      <Screen 
-        name='Home'
-        component={Home}
-        options={{headerShown: false}}
+      <Tab.Screen 
+        name='sendHome'
+        component={Bottom}
+        options={{headerShown: false,}}
       />
 
-    </Navigator>
+    </Stack.Navigator>
   );
 }

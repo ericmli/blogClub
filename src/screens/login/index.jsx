@@ -19,33 +19,30 @@ export default function Login({ navigation }) {
     // Verifica o token para fazer o autoLogin
     const autoLogin = async () => {
         try {
-          const token = await AsyncStorage.getItem('token');
+            const token = await AsyncStorage.getItem('token');
             if (token != false) {
                 await AsyncStorage.setItem('token', token);
-                navigation.reset({
-                index: 0,
-                routes: [{ name: 'Home' }],
-                });
+                navigation.replace('sendHome')
             } else {
+                // Se o token estiver errado, faz com que o usuário realize o login novamente
                 token = null;
             }
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
-      };
-      
-      // Verificar se o token está presente ao iniciar o aplicativo
-      useEffect(() => {
-        autoLogin();
-      }, []);
+    };
 
+    // Verificar se o token está presente ao iniciar o aplicativo
+    useEffect(() => {
+        autoLogin();
+    }, []);
+
+    // Funções para retornar os textos do input do filho pro pai
     function componentEmail(text) {
-        // Função para retornar os textos do input do filho pro pai
         setEmail(text);
 
     }
     function componentPassword(text) {
-        // Função para retornar os textos do input do filho pro pai
         setPassword(text);
     }
 
@@ -55,21 +52,20 @@ export default function Login({ navigation }) {
             password: Yup.string(setAlertPassword('Password invalid')).nullable(false)
         })
 
+        await schema.validate()
         try {
-
-            await schema.validate()
-
             const response = await axios.get(`http://192.168.15.182:3000/login?email=${email}&password=${password}`)
             const token = response.data;
             const tokenString = JSON.stringify(token)
             await AsyncStorage.setItem('token', tokenString)
 
-            if(token != false){
+            if (token != false) {
                 navigation.navigate('Home')
                 console.log(token)
-            }else{
+            } else {
                 token = null
             }
+
         } catch (error) {
             console.log(error)
             setAlertPassword('E-mail or senha invalid')

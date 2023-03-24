@@ -5,6 +5,7 @@ import SvgComponent from "../../imgs/svg/logo";
 import styles from "./styles";
 
 export default function IncludeAll (){
+    
     return(
         <View style={styles.container}>
             <SvgComponent/>
