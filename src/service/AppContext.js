@@ -7,7 +7,7 @@ export const AppProvider = ({ children }) => {
     const [date, setDate] = useState([])
     // Serve para atualizar e realizar a chamada para o map
     useEffect(() => {
-        api.get("/login").then((response) => {
+        api.get("/users").then((response) => {
           setDate(response.data);
         });
       }, []);

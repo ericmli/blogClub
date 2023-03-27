@@ -15,7 +15,8 @@ export default function Login({ navigation }) {
     const [password, setPassword] = useState('')
     const [alertEmail, setAlertEmail] = useState('')
     const [alertPassword, setAlertPassword] = useState('')
-    AsyncStorage.removeItem('token');
+
+    // AsyncStorage.removeItem('token');
     // Verifica o token para fazer o autoLogin
     const autoLogin = async () => {
         try {
@@ -48,27 +49,34 @@ export default function Login({ navigation }) {
 
     const handleLogin = async () => {
         const schema = Yup.object().shape({
-            email: Yup.string().email(setAlertEmail('E-mail invalid')),
-            password: Yup.string(setAlertPassword('Password invalid')).nullable(false)
+            email: Yup.string().email(setAlertEmail("E-mail invalid")).required(),
+            password: Yup.string().required(setAlertPassword("Password is required")),
         })
 
         try {
-            await schema.validate()
+            await schema.validate({ email, password }, { abortEarly: false })
             const response = await api.get(`/login?email=${email}&password=${password}`)
-            const token = response.data;
+
+            const token = response.data[0].id;
             const tokenString = JSON.stringify(token)
             await AsyncStorage.setItem('token', tokenString)
-            console.log(tokenString)
+
+            const nameToken = response.data[0].name;
+            const nameTokenString = JSON.stringify(nameToken)
+            await AsyncStorage.setItem('name', nameTokenString)
+
+            const emailToken = response.data[0].email;
+            const emailTokenString = JSON.stringify(emailToken)
+            await AsyncStorage.setItem('email', emailTokenString)
             
             if (token != false) {
                 navigation.navigate('sendHome')
             } else {
                 token = null
             }
-
+            return
         } catch (error) {
-            console.log(error)
-            setAlertPassword('E-mail or senha invalid')
+            console.log('Caiu no erro de validação')
         }
     }
 
