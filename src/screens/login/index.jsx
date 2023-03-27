@@ -8,14 +8,14 @@ import Button from "../../components/Button";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import * as Yup from "yup";
 import { LoginSocial } from "../../components/loginSocial";
-import axios from "axios";
+import api from "../../service";
 
 export default function Login({ navigation }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [alertEmail, setAlertEmail] = useState('')
     const [alertPassword, setAlertPassword] = useState('')
-
+    AsyncStorage.removeItem('token');
     // Verifica o token para fazer o autoLogin
     const autoLogin = async () => {
         try {
@@ -52,16 +52,16 @@ export default function Login({ navigation }) {
             password: Yup.string(setAlertPassword('Password invalid')).nullable(false)
         })
 
-        await schema.validate()
         try {
-            const response = await axios.get(`http://192.168.15.182:3000/login?email=${email}&password=${password}`)
+            await schema.validate()
+            const response = await api.get(`/login?email=${email}&password=${password}`)
             const token = response.data;
             const tokenString = JSON.stringify(token)
             await AsyncStorage.setItem('token', tokenString)
-
+            console.log(tokenString)
+            
             if (token != false) {
-                navigation.navigate('Home')
-                console.log(token)
+                navigation.navigate('sendHome')
             } else {
                 token = null
             }

@@ -3,6 +3,7 @@ import SplashScreen from 'react-native-splash-screen'
 import { ThemeProvider } from "@react-navigation/native";
 import { theme } from "./theme/Theme";
 import { Routes } from "./rotes";
+import { AppProvider } from "./service/AppContext";
 
 export default function App(){
     useEffect(() => {
@@ -10,9 +11,9 @@ export default function App(){
       }, []);
       
     return(     
-        <ThemeProvider theme={theme}>
+        <AppProvider>
             <Routes/>
-        </ThemeProvider>
+        </AppProvider>
     )
 
 }
