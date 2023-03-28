@@ -1,12 +1,10 @@
-import React from 'react';
-import { View } from 'react-native';
-
-import { styles } from './styles';
+import React from 'react'
+import { View } from 'react-native'
 
 export function Article() {
   return (
     <View>
-        
+
     </View>
-  );
+  )
 }
